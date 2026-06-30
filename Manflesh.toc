@@ -1,0 +1,16 @@
+## Interface: 20505
+## Title: Manflesh
+## Notes: Import a Raid-Helper roster (JSON) and build per-player raid assignments for SSC & TK.
+## Author: 
+## Version: 0.1.0
+## SavedVariables: ManfleshDB
+## SavedVariablesPerCharacter: ManfleshUIDB
+
+JSON.lua
+Data.lua
+Core.lua
+Comm.lua
+Export.lua
+UI.lua
+Zone.lua
+Manflesh.lua
