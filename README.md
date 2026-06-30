@@ -141,25 +141,6 @@ You can drag the encounter window anywhere; its position is **saved per characte
 Boss-by-boss switching (swapping to A'lar's assignments when the fight starts, etc.) is
 planned next via `ENCOUNTER_START` / `ENCOUNTER_END`.
 
-## Is this safe? (ban risk)
-
-No. Addons that run inside Blizzard's official Lua/XML sandbox — like this one — are
-allowed. Bans target *external* programs (memory editors, injectors, bots), which an
-addon cannot be. This addon never sends visible chat, only hidden addon-message prefixes,
-so there's nothing reportable as spam.
-
-The only realistic failure mode from comms is a **disconnect** (not a ban), caused by
-exceeding the server's message limits. The sync layer is built to stay safely under them:
-
-- Every message is hard-capped well under the ~255-byte limit that would disconnect you.
-- Sends are paced and **respect the server's throttle return code** — throttled messages
-  are re-queued, never dropped, so transfers can't overrun the per-prefix allowance.
-- It stays silent for the first ~6 seconds after login (the limiter is sensitive then).
-- Large rosters transfer over **whispers** (exempt from the per-prefix throttle); guild
-  edit-ops are small and trickle out at roughly the server's regen rate.
-
-Worst case during testing: you get kicked to character select — just log back in.
-
 ---
 
 ## Assignments available
