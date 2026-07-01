@@ -6,9 +6,19 @@ ns.Core = ns.Core or {}
 local Core = ns.Core
 
 local function msg(text)
-    DEFAULT_CHAT_FRAME:AddMessage("|cff66ccffManflesh|r: " .. text)
+    SendSystemMessage(ns.MSG_PREFIX .. ns.SanitizeString(text))
 end
 ns.Print = msg
+
+-- Remove null terminators and control characters
+function ns.SanitizeString(text)
+    if type(text) ~= "string" then
+        text = tostring(text)
+    end
+    -- %c matches all control characters (ASCII 0-31 and 127)
+    text = text:gsub("%c", "")
+    return text
+end
 
 function ns.MyName()
     local n = UnitName("player")

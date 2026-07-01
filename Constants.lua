@@ -5,6 +5,8 @@ ns.VERSION = "0.1.0"
 
 -- addon-message channel prefix (also the SendAddonMessage / registered prefix)
 ns.PREFIX = "Manflesh"
+-- chat message prefix (for notifications)
+ns.MSG_PREFIX = "|cff66ccffManflesh:|r|cFFFFFFFF "
 
 -- shared textures
 ns.TEX_ROW_HIGHLIGHT = "Interface\\QuestFrame\\UI-QuestTitleHighlight"
