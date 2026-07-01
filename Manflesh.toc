@@ -19,6 +19,9 @@ Classes\Shaman.lua
 Classes\Mage.lua
 Classes\Warlock.lua
 Classes\Druid.lua
+Raids\Karazhan.lua
+Raids\GruulsLair.lua
+Raids\MagtheridonsLair.lua
 Raids\SSC.lua
 Raids\TK.lua
 Core.lua

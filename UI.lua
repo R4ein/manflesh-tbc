@@ -1343,7 +1343,7 @@ function UI.ShowEncounter(raidName, bossName)
     local count
     if #mine == 0 then
         local row = EncounterRow(1, child, width)
-        row.text:SetText("|cff888888No tasks.|r")
+        row.text:SetText("|cff888888No Tasks Assigned.|r")
         row:Show()
         count = 1
     else

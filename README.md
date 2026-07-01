@@ -174,11 +174,11 @@ Raids/bosses:
 | `Data.lua` | Class/raid registries (`RegisterClass`/`RegisterRaid`), class colors + spec icons |
 | `Roles.lua` | Roles, raid markers, role-based assignment definitions, `GetAssignmentTypes` |
 | `Classes\*.lua` | One file per class: display/color, specs + spec icons, DPS-only lock, Raid-Helper export emotes, class-specific assignments |
-| `Raids\*.lua` | One file per raid (SSC, TK): name + boss list |
+| `Raids\*.lua` | One file per raid: name, boss list (names match `ENCOUNTER_START` strings), and `zoneName` (the in-game zone text for the instance) |
+| `Zone.lua` | Zone-watch engine: reads `zoneName` from `ns.RAIDS` to build its lookup, handles `ZONE_CHANGED_NEW_AREA` / `ENCOUNTER_START` / `ENCOUNTER_END` |
 | `Core.lua` | SavedVariables, multi-roster model, permissions, mutators |
 | `Comm.lua` | Guild sync: throttled queue, chunked transfer, discovery, edit ops |
 | `RaidHelper.lua` | All Raid-Helper format logic: event-JSON import + comp/raidplan export (JSON & curl) |
 | `Export.lua` | TSV builder for Google Sheets (creator-gated) |
 | `UI.lua` | Main window, popups, player editor + assignment builder, sync prompts, encounter window |
-| `Zone.lua` | Zone watcher that pops the encounter window for supported raids |
 | `Manflesh.lua` | Init, events, addon-message routing, slash commands |
